@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: _TreeAtlas_diff
+  m_Shader: {fileID: 4800000, guid: 540910e3501e6ca40a1885d02a233328, type: 3}
+  m_ShaderKeywords: []
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+    - first:
+        name: _BumpTransSpecMap
+      second:
+        m_Texture: {fileID: 2800000, guid: 3282905b86836f444acad27e0e0c9afd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _MainTex
+      second:
+        m_Texture: {fileID: 2800000, guid: c0b437e30d33d6a4bb07c4a4464bc3d0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - first:
+        name: _AO
+      second: 0.89285713
+    - first:
+        name: _BaseLight
+      second: 0.45714286
+    - first:
+        name: _BillboardContrast
+      second: 1
+    - first:
+        name: _Cutoff
+      second: 0.3928572
+    - first:
+        name: _Occlusion
+      second: 8.571428
+    - first:
+        name: _ShadowOffsetScale
+      second: 1
+    - first:
+        name: _ShadowStrength
+      second: 0.55357146
+    - first:
+        name: _Shininess
+      second: 0.030000003
+    - first:
+        name: _SpecularPower
+      second: 0
+    - first:
+        name: _SquashAmount
+      second: 1
+    - first:
+        name: _TranslucencyViewDependency
+      second: 0.51785713
+    m_Colors:
+    - first:
+        name: _Color
+      second: {r: 1, g: 1, b: 1, a: 1}
+    - first:
+        name: _Scale
+      second: {r: 1, g: 1, b: 1, a: 1}
+    - first:
+        name: _TranslucencyColor
+      second: {r: 0.26410323, g: 0.2794118, b: 0.059580464, a: 1}

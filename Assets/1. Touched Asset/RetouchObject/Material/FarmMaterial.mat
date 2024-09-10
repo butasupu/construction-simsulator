@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: FarmMaterial
+  m_Shader: {fileID: 4800000, guid: e5e98830d098397418b0da96c270b80d, type: 3}
+  m_ShaderKeywords: []
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+    - first:
+        name: _AO
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _DiffCubeIBL
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _MainTex
+      second:
+        m_Texture: {fileID: 2800000, guid: 35b29ba1aed861d4b8bf411292940561, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _MainTex2
+      second:
+        m_Texture: {fileID: 2800000, guid: b85e168a27f1fa547af3c4eaa03b0bba, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _MainTex3
+      second:
+        m_Texture: {fileID: 2800000, guid: e857933d4bc5985438734ec8e3450da7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _NormTex
+      second:
+        m_Texture: {fileID: 2800000, guid: b65fcf56cb862294d8ad3ef87f153ba1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _NormTex2
+      second:
+        m_Texture: {fileID: 2800000, guid: 057eb8b816e641b4a84f197ca779bba2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _NormTex3
+      second:
+        m_Texture: {fileID: 2800000, guid: d8fcefaa74686244d92087214ad65491, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _SpecCubeIBL
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - first:
+        name: _Fresnel
+      second: 0
+    - first:
+        name: _Shininess
+      second: 1
+    - first:
+        name: _SpecInt
+      second: 1
+    - first:
+        name: _scale
+      second: 1
+    - first:
+        name: _scaleSplat1
+      second: 2
+    - first:
+        name: _scaleSplat2
+      second: 1.5
+    - first:
+        name: _scaleSplat3
+      second: 4
+    - first:
+        name: _scaleSplat4
+      second: 4
+    - first:
+        name: _sharpness01
+      second: 5
+    - first:
+        name: _sharpness02
+      second: 5
+    - first:
+        name: _sharpness03
+      second: 10
+    m_Colors:
+    - first:
+        name: _Color
+      second: {r: 0.627451, g: 0.627451, b: 0.627451, a: 1}
+    - first:
+        name: _SpecColor
+      second: {r: 1, g: 1, b: 1, a: 1}

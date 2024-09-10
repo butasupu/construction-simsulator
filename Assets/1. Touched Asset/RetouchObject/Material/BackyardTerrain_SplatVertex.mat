@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: BackyardTerrain_SplatVertex
+  m_Shader: {fileID: 4800000, guid: 07d0b04822e00564db55ae7fa4477453, type: 3}
+  m_ShaderKeywords: []
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+    - first:
+        name: _AO
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _DiffCubeIBL
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _MainTex
+      second:
+        m_Texture: {fileID: 2800000, guid: 35b29ba1aed861d4b8bf411292940561, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _MainTex2
+      second:
+        m_Texture: {fileID: 2800000, guid: b8f1ba605d0c8fc41be1695220f7e5c9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _MainTex3
+      second:
+        m_Texture: {fileID: 2800000, guid: e857933d4bc5985438734ec8e3450da7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _MainTex4
+      second:
+        m_Texture: {fileID: 2800000, guid: ad3fdae0ba6836544807f049f70dc9cd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _NormTex
+      second:
+        m_Texture: {fileID: 2800000, guid: b65fcf56cb862294d8ad3ef87f153ba1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _NormTex2
+      second:
+        m_Texture: {fileID: 2800000, guid: 495191e66f8ae6a46b908fde7fddbb37, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _NormTex3
+      second:
+        m_Texture: {fileID: 2800000, guid: b44e43d00be624240a8b6e21a64968dd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _NormTex4
+      second:
+        m_Texture: {fileID: 2800000, guid: 0dfe41375eba9b6428fc1ffbd1a20c0c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _SpecCubeIBL
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - first:
+        name: _Fresnel
+      second: 0
+    - first:
+        name: _Shininess
+      second: 1.9999998
+    - first:
+        name: _SpecInt
+      second: 1
+    - first:
+        name: _scale
+      second: 0.02
+    - first:
+        name: _scaleSplat1
+      second: 2
+    - first:
+        name: _scaleSplat2
+      second: 3
+    - first:
+        name: _scaleSplat3
+      second: 4
+    - first:
+        name: _scaleSplat4
+      second: 1
+    - first:
+        name: _sharpness01
+      second: 5
+    - first:
+        name: _sharpness02
+      second: 4
+    - first:
+        name: _sharpness03
+      second: 4
+    m_Colors:
+    - first:
+        name: _Color
+      second: {r: 0.49211845, g: 0.5019608, b: 0.49710816, a: 1}
+    - first:
+        name: _SpecColor
+      second: {r: 1, g: 1, b: 1, a: 1}

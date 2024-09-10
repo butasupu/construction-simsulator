@@ -1,0 +1,125 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Hotel_Plaza
+  m_Shader: {fileID: 4800000, guid: 07d0b04822e00564db55ae7fa4477453, type: 3}
+  m_ShaderKeywords: []
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+    - first:
+        name: _AO
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _DiffCubeIBL
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _MainTex
+      second:
+        m_Texture: {fileID: 2800000, guid: 25a97ead75d91d145a1d6295c0d14e83, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _MainTex2
+      second:
+        m_Texture: {fileID: 2800000, guid: 01bbcca23b73df7429071b70cb4c7039, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _MainTex3
+      second:
+        m_Texture: {fileID: 2800000, guid: ccc0de2a0eb7bf34fb003b669da7d6df, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _MainTex4
+      second:
+        m_Texture: {fileID: 2800000, guid: 9adf6529633b31d489ccd1f6f85288ee, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _NormTex
+      second:
+        m_Texture: {fileID: 2800000, guid: 68075aba95e862e408214c025f6e9e17, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _NormTex2
+      second:
+        m_Texture: {fileID: 2800000, guid: 1b3b3629384e73a4eb3b1ebe708bc89f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _NormTex3
+      second:
+        m_Texture: {fileID: 2800000, guid: 19dd5e6496355104a89f60bfa8239afc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _NormTex4
+      second:
+        m_Texture: {fileID: 2800000, guid: 9e917495647ac0a4b8299d06de9baa48, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _SpecCubeIBL
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - first:
+        name: _Fresnel
+      second: 0
+    - first:
+        name: _Gloss
+      second: 0.1
+    - first:
+        name: _Shininess
+      second: 0.5
+    - first:
+        name: _SpecInt
+      second: 1
+    - first:
+        name: _scale
+      second: 0.02
+    - first:
+        name: _scaleSplat1
+      second: 39
+    - first:
+        name: _scaleSplat2
+      second: 70
+    - first:
+        name: _scaleSplat3
+      second: 30
+    - first:
+        name: _scaleSplat4
+      second: 30
+    - first:
+        name: _sharpness01
+      second: 3
+    - first:
+        name: _sharpness02
+      second: 3
+    - first:
+        name: _sharpness03
+      second: 3.5
+    m_Colors:
+    - first:
+        name: _Color
+      second: {r: 0.768935, g: 0.78431374, b: 0.7780166, a: 1}
+    - first:
+        name: _SpecColor
+      second: {r: 1, g: 1, b: 1, a: 1}

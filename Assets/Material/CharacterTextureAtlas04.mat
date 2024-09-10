@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: CharacterTextureAtlas04
+  m_Shader: {fileID: 4800000, guid: 6031eeab91d3f9a4386824e258b8fe32, type: 3}
+  m_ShaderKeywords: []
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+    - first:
+        name: _DiffCubeIBL
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _MainTex
+      second:
+        m_Texture: {fileID: 2800000, guid: f02a560793f05284499c7a0bb6af2f52, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _SpecCubeIBL
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _SpecTex
+      second:
+        m_Texture: {fileID: 2800000, guid: 16f8ed89677c8d04ca155feb10125ba0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - first:
+        name: _Glossiness
+      second: 1
+    - first:
+        name: _Shininess
+      second: 1
+    m_Colors:
+    - first:
+        name: _Color
+      second: {r: 0.75735295, g: 0.75735295, b: 0.75735295, a: 1}
+    - first:
+        name: _ColorCloth
+      second: {r: 0.65711504, g: 0.7195487, b: 0.86764705, a: 1}
+    - first:
+        name: _ColorEye
+      second: {r: 0, g: 0, b: 0, a: 1}
+    - first:
+        name: _ColorHair
+      second: {r: 0, g: 0, b: 0, a: 1}
+    - first:
+        name: _ColorShoe
+      second: {r: 0.25, g: 0.25, b: 0.25, a: 1}

@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: GravelPlant01
+  m_Shader: {fileID: 4800000, guid: 076047d5bea69be44ab0f62895753410, type: 3}
+  m_ShaderKeywords:
+  - DIFFCUBE_ON
+  - SPECCUBE_ON
+  - LUX_AO_OFF
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+    - first:
+        name: _DiffCubeIBL
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _DissolveTex
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _MainTex
+      second:
+        m_Texture: {fileID: 2800000, guid: 8aa2f7d469692614a8a8751055b06094, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _SpecCubeIBL
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _SpecTex
+      second:
+        m_Texture: {fileID: 2800000, guid: badba336ce31d804ab2bd79fcef5a8f4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - first:
+        name: _AO
+      second: 1
+    - first:
+        name: _DissolveEdgeMultiplier
+      second: 0
+    - first:
+        name: _DissolveEdgeRange
+      second: 0.42
+    - first:
+        name: _DissolveIntensity
+      second: 0.5
+    - first:
+        name: _Fresnel
+      second: 0
+    - first:
+        name: _Gloss
+      second: 1
+    - first:
+        name: _Glossiness
+      second: 0.5
+    - first:
+        name: _MainHeight
+      second: 0
+    - first:
+        name: _ReflFresnelFalloff
+      second: 0.5
+    - first:
+        name: _ReflFresnelMultiplier
+      second: 0.8
+    - first:
+        name: _Shininess
+      second: 1
+    - first:
+        name: _SpecInt
+      second: 1
+    m_Colors:
+    - first:
+        name: _Color
+      second: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
+    - first:
+        name: _DissolveEdgeColor
+      second: {r: 1, g: 1, b: 1, a: 0}
+    - first:
+        name: _ReflectColor
+      second: {r: 0, g: 0, b: 0, a: 0}
+    - first:
+        name: _SpecColor
+      second: {r: 1, g: 1, b: 1, a: 1}

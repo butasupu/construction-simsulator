@@ -1,0 +1,146 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: cuttedPlane
+  m_Shader: {fileID: 4800000, guid: 77a7c0a4a1e4c1649be635a03b59b94f, type: 3}
+  m_ShaderKeywords:
+  - DIFFCUBE_ON
+  - SPECCUBE_ON
+  - LUX_AO_OFF
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+    - first:
+        name: _AO
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _DiffCubeIBL
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _MainTex
+      second:
+        m_Texture: {fileID: 2800000, guid: 0038183348ef72b4e9ba1b00abeb0ec5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _MainTexNorm
+      second:
+        m_Texture: {fileID: 2800000, guid: 3a498f22244c086489d0d62c14a48e6a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _SpecCubeIBL
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _Splat1
+      second:
+        m_Texture: {fileID: 2800000, guid: 5e0e8320c16793a4f9695416b90a59fd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _Splat1Norm
+      second:
+        m_Texture: {fileID: 2800000, guid: 5e5c0c99bb4c61f41800c62375183544, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _Splat2
+      second:
+        m_Texture: {fileID: 2800000, guid: 8a3db02e0dad4d64ba5e4d4f37e61021, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _Splat2Norm
+      second:
+        m_Texture: {fileID: 2800000, guid: 5e5c0c99bb4c61f41800c62375183544, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _Splat3
+      second:
+        m_Texture: {fileID: 2800000, guid: 35b29ba1aed861d4b8bf411292940561, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _Splat3Norm
+      second:
+        m_Texture: {fileID: 2800000, guid: b65fcf56cb862294d8ad3ef87f153ba1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _Splat4
+      second:
+        m_Texture: {fileID: 2800000, guid: 48457089adbc0ce4080fba5c4b02ef71, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _Splat4Norm
+      second:
+        m_Texture: {fileID: 2800000, guid: 1e27d762c122d0148a9ff1d708ee5580, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - first:
+        name: _Brightness
+      second: 0.8
+    - first:
+        name: _Fresnel
+      second: 0
+    - first:
+        name: _Shininess
+      second: 1
+    - first:
+        name: _SpecInt
+      second: 1
+    - first:
+        name: _scale
+      second: 0.25
+    - first:
+        name: _scaleSplat1
+      second: 1
+    - first:
+        name: _scaleSplat2
+      second: 1
+    - first:
+        name: _scaleSplat3
+      second: 0.5
+    - first:
+        name: _scaleSplat4
+      second: 1
+    - first:
+        name: _scaleSplat5
+      second: 1
+    - first:
+        name: _sharpness01
+      second: 5
+    - first:
+        name: _sharpness02
+      second: 5
+    - first:
+        name: _sharpness03
+      second: 5
+    m_Colors:
+    - first:
+        name: _Color
+      second: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
+    - first:
+        name: _Emission
+      second: {r: 0, g: 0, b: 0, a: 0}
+    - first:
+        name: _SpecColor
+      second: {r: 0, g: 0, b: 0, a: 1}

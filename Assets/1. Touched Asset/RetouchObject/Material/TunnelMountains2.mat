@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: TunnelMountains2
+  m_Shader: {fileID: 4800000, guid: 80b198863db64da4a89bb224a3c8beb8, type: 3}
+  m_ShaderKeywords:
+  - DIFFCUBE_ON
+  - SPECCUBE_ON
+  - LUX_AO_ON
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+    - first:
+        name: _DiffCubeIBL
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _LightTex
+      second:
+        m_Texture: {fileID: 2800000, guid: a1ae9e17775a59149b70585f35140e4b, type: 3}
+        m_Scale: {x: 0.25, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _MainTex
+      second:
+        m_Texture: {fileID: 2800000, guid: f2d2e4e2b2d34684d94d096514184505, type: 3}
+        m_Scale: {x: 4, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _SpecCubeIBL
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _SpecTex
+      second:
+        m_Texture: {fileID: 2800000, guid: ad061b226a48824468d28ebd85f35c4c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - first:
+        name: _AO
+      second: 1
+    - first:
+        name: _Fresnel
+      second: 0
+    - first:
+        name: _Glossiness
+      second: 0
+    - first:
+        name: _Shininess
+      second: 0.05
+    - first:
+        name: _SpecInt
+      second: 1
+    m_Colors:
+    - first:
+        name: _Color
+      second: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - first:
+        name: _Emission
+      second: {r: 0.5, g: 0.44279918, b: 0.4117647, a: 0}
+    - first:
+        name: _SpecColor
+      second: {r: 0.25735295, g: 0.25735295, b: 0.25735295, a: 1}

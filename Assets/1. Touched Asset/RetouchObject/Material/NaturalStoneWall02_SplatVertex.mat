@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: NaturalStoneWall02_SplatVertex
+  m_Shader: {fileID: 4800000, guid: e5e98830d098397418b0da96c270b80d, type: 3}
+  m_ShaderKeywords: []
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+    - first:
+        name: _AO
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _DiffCubeIBL
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _MainTex
+      second:
+        m_Texture: {fileID: 2800000, guid: 7c6c615d16b284245993de0178083bce, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _MainTex2
+      second:
+        m_Texture: {fileID: 2800000, guid: fe82049fd63e99c40aff0e0c2ca2f5a3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _MainTex3
+      second:
+        m_Texture: {fileID: 2800000, guid: 7c6c615d16b284245993de0178083bce, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _NormTex
+      second:
+        m_Texture: {fileID: 2800000, guid: 9f003057a5512f94aa45621a6d7f59fe, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _NormTex2
+      second:
+        m_Texture: {fileID: 2800000, guid: 9f003057a5512f94aa45621a6d7f59fe, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _NormTex3
+      second:
+        m_Texture: {fileID: 2800000, guid: 9f003057a5512f94aa45621a6d7f59fe, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _SpecCubeIBL
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - first:
+        name: _Fresnel
+      second: 0.53571427
+    - first:
+        name: _Gloss
+      second: 1
+    - first:
+        name: _ReflFresnelFalloff
+      second: 0.5
+    - first:
+        name: _ReflFresnelMultiplier
+      second: 0.8
+    - first:
+        name: _Shininess
+      second: 1
+    - first:
+        name: _SpecInt
+      second: 0.5
+    - first:
+        name: _scale
+      second: 1
+    - first:
+        name: _scaleSplat1
+      second: 1
+    - first:
+        name: _scaleSplat2
+      second: 1
+    - first:
+        name: _scaleSplat3
+      second: 1
+    - first:
+        name: _sharpness01
+      second: -10
+    - first:
+        name: _sharpness02
+      second: 4
+    m_Colors:
+    - first:
+        name: _Color
+      second: {r: 0.54901963, g: 0.54901963, b: 0.54901963, a: 1}
+    - first:
+        name: _ReflectColor
+      second: {r: 0, g: 0, b: 0, a: 0}
+    - first:
+        name: _SpecColor
+      second: {r: 1, g: 1, b: 1, a: 1}

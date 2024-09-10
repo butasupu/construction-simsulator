@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: TreeTestMat
+  m_Shader: {fileID: 4800000, guid: 35d62250a8a478649b4bccd723fb13b8, type: 3}
+  m_ShaderKeywords: []
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+    - first:
+        name: _MainTex
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - first:
+        name: _BillboardContrast
+      second: 1
+    - first:
+        name: _Cutoff
+      second: 0.3
+    - first:
+        name: _ShadowOffsetScale
+      second: 1
+    - first:
+        name: _ShadowStrength
+      second: 0.8
+    - first:
+        name: _Shininess
+      second: 0.078125
+    - first:
+        name: _SquashAmount
+      second: 1
+    - first:
+        name: _TranslucencyViewDependency
+      second: 0.7
+    m_Colors:
+    - first:
+        name: _Color
+      second: {r: 1, g: 1, b: 1, a: 1}
+    - first:
+        name: _Scale
+      second: {r: 1, g: 1, b: 1, a: 1}
+    - first:
+        name: _SpecColor
+      second: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - first:
+        name: _TranslucencyColor
+      second: {r: 0.73, g: 0.85, b: 0.41, a: 1}
+    - first:
+        name: _TreeBillboardCameraFront
+      second: {r: 0.6440774, g: -0.69011116, b: -0.3300165, a: 1}
+    - first:
+        name: _TreeBillboardCameraPos
+      second: {r: 261.05725, g: 280.6718, b: -186.62518, a: -0.19384424}
+    - first:
+        name: _TreeBillboardCameraRight
+      second: {r: -0.22517112, g: 0.24126513, b: -0.9439752, a: 1}
+    - first:
+        name: _TreeBillboardCameraUp
+      second: {r: 0.73106927, g: 0.68230325, b: 3.5762787E-07, a: 1.54}
+    - first:
+        name: _TreeBillboardDistances
+      second: {r: 4000000, g: 0, b: 0, a: 0}

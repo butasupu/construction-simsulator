@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: MiniMap
+  m_Shader: {fileID: 4800000, guid: 333dc24043bdc024ea171982cdf2911d, type: 3}
+  m_ShaderKeywords: []
+  m_CustomRenderQueue: 2999
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+    - first:
+        name: _MainTex
+      second:
+        m_Texture: {fileID: 8400000, guid: f70fa16156588b64eb1f272f6020c95f, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _Mask
+      second:
+        m_Texture: {fileID: 2800000, guid: c13f707160ce29f488b0e299efa343e8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - first:
+        name: _AlphaMultiplier
+      second: 10
+    - first:
+        name: _Cutoff
+      second: 0.55769235
+    - first:
+        name: _Stencil
+      second: 4.17
+    m_Colors:
+    - first:
+        name: _Color
+      second: {r: 1, g: 1, b: 1, a: 0.7490196}
+    - first:
+        name: _MaskColor
+      second: {r: 1, g: 0, b: 0, a: 1}
