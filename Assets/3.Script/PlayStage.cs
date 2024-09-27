@@ -5,7 +5,7 @@ using UnityEngine.Audio;
 
 public class PlayStage : MonoBehaviour
 {
-    private GameObject FinishUI;
+    [SerializeField] GameObject Finish_UI;
     [SerializeField] GameObject rebar, form, concrete, wall,window, decoration;//마우스에 띄울 오브젝트
 
     [SerializeField]
@@ -15,6 +15,8 @@ public class PlayStage : MonoBehaviour
         base_rebar_2f, base_form_2f, base_concre_2f,
         scaffold_1f, scaffold_2f, scaffold_3f,wall_house,
         roofstructure, window_house, roofFin, decoration_house;
+
+    int currentStep =0;
 
     //stage1
     [SerializeField] AudioMixer audioMixer;
@@ -30,12 +32,12 @@ public class PlayStage : MonoBehaviour
 
     private void Start()
     {
-        
+        currentStep = 0;
     }
 
     private void Update()
     {
-        ActiveObjectMousePosition();
+        //ActiveObjectMousePosition();
         ClaerCheck();
     }
     private void FixedUpdate()
@@ -45,7 +47,8 @@ public class PlayStage : MonoBehaviour
     }
 
 
-
+    #region 마우스 위치에 임시 오브젝트 생성
+    /*
     private void ActiveObjectMousePosition()
     {
         //stickode.tistory.com/499
@@ -61,39 +64,39 @@ public class PlayStage : MonoBehaviour
                 return;
             case 1:
                 { 
-                    transform.position = point;
                     rebar.SetActive(true);
+                    transform.position = point;
                 }
                 break;
             case 2:
                 {
-                    transform.position = point;
                     form.SetActive(true);
+                    transform.position = point;
                 }
                 break;
             case 3:
                 {
-                    transform.position = point;
                     concrete.SetActive(true);
+                    transform.position = point;
                 }
                 break;
             case 4:
                 {
-                    transform.position = point;
                     wall.SetActive(true);
+                    transform.position = point;
                 }
                 break;
             case 5:
                 {
-                    transform.position = point;
                     window.SetActive(true);
+                    transform.position = point;
                 }
                 break;
 
             case 6:
                 {
-                    transform.position = point;
                     decoration.SetActive(true);
+                    transform.position = point;
                 }
                 break;
 
@@ -101,11 +104,13 @@ public class PlayStage : MonoBehaviour
 
         }
     }
-
+    */
+    #endregion
+    #region 수정 전 0927.3.11
+    /*
     private void ActiveGuideObject()
     {
         //지금 현재 constructionNum에 들어가 있는 숫자의 오브젝트를 활성화합니다.
-        //Shader 색은 빨간색 ActiveObjectMousePosition의 오브젝드와 곂쳐질 시 녹색으로 변경
         //만약 마우스의 클릭 시 아무것도 이루어 지지 않았을 경우 다시 오브젝트를 비활성화.
         if(GameManager.Instance.userData.stageNum[0] ==1)
         {
@@ -205,6 +210,108 @@ public class PlayStage : MonoBehaviour
             //스테이지 2 아파트
         }
     }
+    */
+    #endregion
+
+    private void ActiveGuideObject()
+    {
+        if (GameManager.Instance.userData.stageNum[0] != 1) return;
+        if (GameManager.Instance.userData.constructionNum[0] == 0) return;
+
+        switch(GameManager.Instance.userData.constructionNum[0])
+        {
+            case 1:
+                ActiveConstructionStep(pillar_rebar_1f, base_rebar_2f, pillar_rebar_2f);
+                break;
+            case 2:
+                ActiveConstructionStep(pillar_form_1f, base_form_2f, pillar_form_2f);
+                break;
+            case 3:
+                ActiveConstructionStep(pillar_concre_1f, base_concre_2f, pillar_concre_2f);
+                break;
+
+            case 4:
+                ActiveConstructionStep(scaffold_1f, scaffold_2f, scaffold_3f);
+                break;
+            case 5:
+                window_house.SetActive(true);
+                break;
+            case 6:
+                wall_house.SetActive(true);
+                break;
+            case 7:
+                roofFin.SetActive(true);
+                break;
+            case 8:
+                decoration_house.SetActive(true);
+                break;
+
+        }
+    }
+
+    private void ActiveConstructionStep(GameObject firstObj, GameObject secondObj = null,GameObject thirdObj = null, GameObject fourthObj = null)
+    {
+        if(!firstObj.activeSelf&& currentStep ==0)
+        {
+            firstObj.SetActive(true);
+            if(secondObj != null)
+            {
+                currentStep++;
+                Debug.Log($"step{currentStep}");
+            }
+            else
+            {
+                currentStep = 0;
+                Debug.Log($"step{currentStep}");
+            }
+            GameManager.Instance.userData.constructionNum[0] = 0;
+            return;
+        }
+        if(secondObj != null && !secondObj.activeSelf && firstObj.activeSelf && currentStep == 1)
+        {
+            secondObj.SetActive(true);
+            if (thirdObj != null)
+            {
+                currentStep++;
+                Debug.Log($"step{currentStep}");
+            }
+            else
+            {
+                currentStep = 0;
+                Debug.Log($"step{currentStep}");
+            }
+            GameManager.Instance.userData.constructionNum[0] = 0;
+            return;
+        }
+        if (thirdObj != null && !thirdObj.activeSelf && secondObj.activeSelf && currentStep == 2)
+        {
+            thirdObj.SetActive(true);
+            if (fourthObj != null)
+            {
+                currentStep++;
+                Debug.Log($"step{currentStep}");
+            }
+            else
+            {
+                currentStep = 0;
+                Debug.Log($"step{currentStep}");
+            }
+            GameManager.Instance.userData.constructionNum[0] = 0;
+            return;
+        }
+        if (fourthObj != null && !fourthObj.activeSelf && thirdObj.activeSelf && currentStep == 3)
+        {
+            fourthObj.SetActive(true);
+            currentStep = 0;
+            Debug.Log($"step{currentStep}");
+            GameManager.Instance.userData.constructionNum[0] = 0;
+            return;
+
+        }
+    }
+
+
+
 
     private void ActiveRealObject()
     {
@@ -231,11 +338,14 @@ public class PlayStage : MonoBehaviour
 
     private void ClaerCheck()
     {
-        if (!decoration.activeSelf) return;
-        FinishUI.SetActive(true);
-        audioSource.Stop();
-        audioSource.clip = audioClip;
-        audioSource.Play();
+        if (!decoration_house.activeSelf) return;
+        if(decoration_house.activeSelf)
+        {
+            Finish_UI.SetActive(true);
+            audioSource.Stop();
+            audioSource.clip = audioClip;
+            audioSource.Play();
+        }
     }
     public void MasterSetting(float val)
     {

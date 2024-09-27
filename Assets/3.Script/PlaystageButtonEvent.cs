@@ -20,5 +20,10 @@ public class PlaystageButtonEvent : MonoBehaviour
     {
         GameManager.Instance.ExitGame();
     }
-  
+    public void P_SetStageNum(int index)
+    {
+        GameManager.Instance.SetStageIndex(index);
+    }
+
+
 }
