@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class CameraControl : MonoBehaviour
 {
@@ -27,38 +28,45 @@ public class CameraControl : MonoBehaviour
     private void MouseRotate()
     {
         Vector3 lookPosition = LookAtObj.transform.position;
-        if(Input.GetMouseButton(0))
+        if(!IsPointerOverUIElement())
         {
-            Debug.Log("입력 됨");
-            xRotateMove = Input.GetAxis("Mouse X") * Time.deltaTime * rotateSpeed - DeSpeed * Time.deltaTime;
-            //yRotateMove = Input.GetAxis("Mouse Y") * Time.deltaTime * rotateSpeed - DeSpeed * Time.deltaTime;
-
-            //Vector3 currentRotation = transform.eulerAngles;
-
-            //currentRotation.x -= yRotateMove;
-            //currentRotation.x = Mathf.Clamp(currentRotation.x,yminLimite,ymaxLimite);
-
-            //currentRotation.y += xRotateMove;
-            //
-            //transform.eulerAngles = currentRotation;
+            if(Input.GetMouseButton(0))
+            {
+                
+                xRotateMove = Input.GetAxis("Mouse X") * Time.deltaTime * rotateSpeed - DeSpeed * Time.deltaTime;
             
-            //transform.RotateAround(lookPosition, Vector3.right, -yRotateMove);
-            transform.RotateAround(lookPosition, Vector3.up, xRotateMove);
-            Debug.Log("입력 나감");
+                transform.RotateAround(lookPosition, Vector3.up, xRotateMove);
+                
+            }
+            else
+            {
+                float scrollWheel = Input.GetAxis("Mouse ScrollWheel");
+            
+                //Vector3 cameraDirection = this.transform.localRotation * Vector3.forward;
+                //
+                //this.transform.position += cameraDirection * Time.deltaTime * scrollWheel * ScrollSpeed;
+            
+                float distanceToTarget = Vector3.Distance(transform.position, lookPosition);
+                //카메라와 lookPosition과 사이의 거리를 vector3값으로 받아오는 것
+            
+                Vector3 cameraDirection = (transform.position - lookPosition).normalized;
+                //카메라가 LookAtObj 방향으로 이동하는 백터 계산
+            
+                float zoomAmount = scrollWheel * Time.deltaTime * ScrollSpeed;
+                //스크롤에 따른 이동 거리 계산
+            
+                float newDistance = Mathf.Clamp(distanceToTarget - zoomAmount, minZoom, maxZoom);
+                //줌 이후의 거리를 계산하고 범위 제한 적용
+            
+                transform.position = lookPosition + cameraDirection * newDistance;
+                //새로운 거리를 적용하여 카메라 위치를 조정한다
+            
+            }
         }
-        else
-        {
-            float scrollWheel = Input.GetAxis("Mouse ScrollWheel");
 
-            Vector3 cameraDirection = this.transform.localRotation * Vector3.forward;
-
-            this.transform.position += cameraDirection * Time.deltaTime * scrollWheel * ScrollSpeed;
-        }
-        //else if(Input.GetMouseButton(1))
-        //{
-        //    yRotateMove = Input.GetAxis("Mouse Y") * Time.deltaTime * rotateSpeed - DeSpeed * Time.deltaTime;
-        //    transform.RotateAround(lookPosition, Vector3.right, -yRotateMove);
-        //}
     }
-
+    private bool IsPointerOverUIElement()
+    {
+        return EventSystem.current.IsPointerOverGameObject();
+    }
 }
