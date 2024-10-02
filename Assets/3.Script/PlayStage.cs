@@ -20,7 +20,7 @@ public class PlayStage : MonoBehaviour
 
     //stage1
     [SerializeField] AudioMixer audioMixer;
-    [SerializeField] AudioClip audioClip;
+    [SerializeField] AudioClip clearClip;
     private AudioSource audioSource;
     
 
@@ -32,18 +32,21 @@ public class PlayStage : MonoBehaviour
 
     private void Start()
     {
-        currentStep = 0;
+        int layerMask = ~(1 << LayerMask.NameToLayer("Ignore Raycast"));
+        //currentStep = 0;
     }
 
     private void Update()
     {
         //ActiveObjectMousePosition();
-        ClaerCheck();
+       
     }
     private void FixedUpdate()
     {
+        ClaerCheck();
         ActiveGuideObject();
-        ActiveRealObject();
+        DestroyForm();
+        //ActiveRealObject();
     }
 
 
@@ -227,7 +230,7 @@ public class PlayStage : MonoBehaviour
                 ActiveConstructionStep(pillar_form_1f, base_form_2f, pillar_form_2f);
                 break;
             case 3:
-                ActiveConstructionStep(pillar_concre_1f, base_concre_2f, pillar_concre_2f);
+                ActiveConstructionStep(pillar_concre_1f, base_concre_2f, pillar_concre_2f, roofstructure);
                 break;
 
             case 4:
@@ -310,14 +313,14 @@ public class PlayStage : MonoBehaviour
         }
     }
 
-
-
+    #region 마우스 레이어마스크 변경 
+    /*
 
     private void ActiveRealObject()
     {
-        //int layerMask = ~(1 << LayerMask.NameToLayer("Ignore Raycast"));
+        int layerMask = ~(1 << LayerMask.NameToLayer("Ignore Raycast"));
         //nicotina04.tistory.com /271
-        //ActiveGuideObject가 곂쳐져 녹색으로 변경 상태로 마우스 클릭 시 Shader값 원래대로 바꿔줌
+        
         //ray ray
         if (GameManager.Instance.userData.constructionNum[0] == 0) return;
         if (Input.GetMouseButton(0))
@@ -335,6 +338,8 @@ public class PlayStage : MonoBehaviour
         }
     }
 
+     */
+    #endregion
 
     private void ClaerCheck()
     {
@@ -342,23 +347,27 @@ public class PlayStage : MonoBehaviour
         if(decoration_house.activeSelf)
         {
             Finish_UI.SetActive(true);
-            audioSource.Stop();
-            audioSource.clip = audioClip;
-            audioSource.Play();
+            GameManager.Instance.BGMaudioSource.Stop();
+        }
+        return;
+    }
+
+    public void DestroyForm()
+    {
+        if(pillar_concre_1f.activeSelf)
+        {
+            pillar_form_1f.SetActive(false);
+            pillar_rebar_1f.SetActive(false);
+        }
+        if (pillar_concre_2f.activeSelf)
+        {
+            pillar_form_2f.SetActive(false);
+            pillar_rebar_2f.SetActive(false);
+        }
+        if (base_concre_2f.activeSelf)
+        {
+            base_form_2f.SetActive(false);
+            base_rebar_2f.SetActive(false);
         }
     }
-    public void MasterSetting(float val)
-    {
-        audioMixer.SetFloat("Master", Mathf.Log10(val) * 20);
-
-    }
-    public void BGMSetting(float val)
-    {
-        audioMixer.SetFloat("BGM", Mathf.Log10(val) * 20);
-    }
-    public void SFXSetting(float val)
-    {
-        audioMixer.SetFloat("SFX", Mathf.Log10(val) * 20);
-    }
-
 }

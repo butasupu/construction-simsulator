@@ -17,6 +17,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public AudioMixer audioMixer;
+    public AudioSource BGMaudioSource;
+    public AudioSource SFXaudioSource;
+    public AudioClip IntroBGM;
+    public AudioClip StageBGM;
     private void Awake()
     {
         if(Instance == null)
@@ -44,6 +48,7 @@ public class GameManager : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         GetBoolIsDone();
+        ChangeBGM();
     }
 
     public void SetStageIndex(int index)
@@ -190,7 +195,42 @@ public class GameManager : MonoBehaviour
 
 
     }
+    public void PlayClip(AudioClip clip)
+    {
+       if(clip != null)
+        {
+            SFXaudioSource.PlayOneShot(clip);
+            Debug.Log($"{clip}이 재생되었습니다.");
+        }
+    }
+    public void ChangeBGM()
+    {
+        if(userData.constructionNum[0] > 0)
+        {
+            BGMaudioSource.clip = IntroBGM;
+            BGMaudioSource.loop = true;
+            BGMaudioSource.Play();
+        }
+        if(userData.constructionNum[0] <= 0)
+        {
+            BGMaudioSource.clip = StageBGM;
+            BGMaudioSource.loop = true;
+            BGMaudioSource.Play();
+        }
+    }
+    public void MasterSetting(float val)
+    {
+        audioMixer.SetFloat("Master", Mathf.Log10(val) * 20);
 
+    }
+    public void BGMSetting(float val)
+    {
+        audioMixer.SetFloat("BGM", Mathf.Log10(val) * 20);
+    }
+    public void SFXSetting(float val)
+    {
+        audioMixer.SetFloat("SFX", Mathf.Log10(val) * 20);
+    }
     public void ExitGame()
     {
 #if UNITY_EDITOR
