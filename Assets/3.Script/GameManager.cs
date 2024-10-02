@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public AudioSource SFXaudioSource;
     public AudioClip IntroBGM;
     public AudioClip StageBGM;
+    public Animator ani;
     private void Awake()
     {
         if(Instance == null)
@@ -38,11 +39,22 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        
+        ani = GetComponent<Animator>();
         userData.stageNum = new int[1];
         userData.constructionNum = new int[1];
 
         SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+    private void FixedUpdate()
+    {
+        if(Input.GetKey(KeyCode.O))
+        {
+            FadeIn();
+        }
+        if (Input.GetKey(KeyCode.P))
+        {
+            FadeOut();
+        }
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -231,6 +243,16 @@ public class GameManager : MonoBehaviour
     {
         audioMixer.SetFloat("SFX", Mathf.Log10(val) * 20);
     }
+
+    public void FadeIn()
+    {
+        ani.SetTrigger("FadeIn");
+    }
+    public void FadeOut()
+    {
+        ani.SetTrigger("FadeOut");
+    }
+
     public void ExitGame()
     {
 #if UNITY_EDITOR
