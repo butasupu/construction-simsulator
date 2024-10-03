@@ -39,6 +39,8 @@ public class PlayStage : MonoBehaviour
         A_scaffold_4F, A_scaffold_5F, A_scaffold_6F,
         A_scaffold_7F, A_scaffold_8F, A_scaffold_9F,
 
+        A_Finish_UI,
+
         A_wall, A_window, A_decoration;
 
 
@@ -54,6 +56,7 @@ public class PlayStage : MonoBehaviour
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+        //ResetObject();
         
     }
 
@@ -265,15 +268,19 @@ public class PlayStage : MonoBehaviour
                     break;
                 case 5:
                     window_house.SetActive(true);
+                    GameManager.Instance.userData.constructionNum[0] = 0;
                     break;
                 case 6:
                     wall_house.SetActive(true);
+                    GameManager.Instance.userData.constructionNum[0] = 0;
                     break;
                 case 7:
                     roofFin.SetActive(true);
+                    GameManager.Instance.userData.constructionNum[0] = 0;
                     break;
                 case 8:
                     decoration_house.SetActive(true);
+                    GameManager.Instance.userData.constructionNum[0] = 0;
                     break;
 
             }
@@ -325,20 +332,129 @@ public class PlayStage : MonoBehaviour
                     break;
                 case 5:
                     A_window.SetActive(true);
+                    GameManager.Instance.userData.constructionNum[0] = 0;
                     break;
                 case 6:
                     A_wall.SetActive(true);
+                    GameManager.Instance.userData.constructionNum[0] = 0;
                     break;
                 case 7:
                     roofFin.SetActive(true);
+                    GameManager.Instance.userData.constructionNum[0] = 0;
                     break;
                 case 8:
                     A_decoration.SetActive(true);
+                    GameManager.Instance.userData.constructionNum[0] = 0;
                     break;
 
             }
         }
     }
+    //public void ResetObject()
+    //{
+    //    if(GameManager.Instance.userData.stageNum[0] == 1)
+    //    {
+    //        pillar_rebar_1f.SetActive(false);
+    //        pillar_concre_1f.SetActive(false);
+    //        pillar_form_1f.SetActive(false);
+    //
+    //        base_rebar_2f.SetActive(false);
+    //        base_concre_2f.SetActive(false);
+    //        base_form_2f.SetActive(false);
+    //
+    //        pillar_rebar_2f.SetActive(false);
+    //        pillar_concre_2f.SetActive(false);
+    //        pillar_form_2f.SetActive(false);
+    //        roofstructure.SetActive(false);
+    //
+    //        scaffold_1f.SetActive(false);
+    //        scaffold_2f.SetActive(false);
+    //        scaffold_3f.SetActive(false);
+    //
+    //        window_house.SetActive(false);
+    //        wall_house.SetActive(false);
+    //        roofFin.SetActive(false);
+    //        decoration_house.SetActive(false);
+    //        Finish_UI.SetActive(false);
+    //        Debug.Log("스테이지 1의 오브젝트가 초기화됐습니다.");
+    //    }
+    //    else if (GameManager.Instance.userData.stageNum[0] == 2)
+    //    {
+    //        A_1F_pillar_rebar.SetActive(false);
+    //        A_1F_pillar_form.SetActive(false);
+    //        A_1F_pillar_concre.SetActive(false);
+    //
+    //        A_2F_pillar_rebar.SetActive(false);
+    //        A_2F_pillar_form.SetActive(false);
+    //        A_2F_pillar_concre.SetActive(false);
+    //
+    //        A_3F_pillar_rebar.SetActive(false);
+    //        A_3F_pillar_form.SetActive(false);
+    //        A_3F_pillar_concre.SetActive(false);
+    //
+    //        A_4F_pillar_rebar.SetActive(false);
+    //        A_4F_pillar_form.SetActive(false);
+    //        A_4F_pillar_concre.SetActive(false);
+    //
+    //        A_5F_pillar_rebar.SetActive(false);
+    //        A_5F_pillar_form.SetActive(false);
+    //        A_5F_pillar_concre.SetActive(false);
+    //
+    //        A_6F_pillar_rebar.SetActive(false);
+    //        A_6F_pillar_form.SetActive(false);
+    //        A_6F_pillar_concre.SetActive(false);
+    //
+    //        A_7F_pillar_rebar.SetActive(false);
+    //        A_7F_pillar_form.SetActive(false);
+    //        A_7F_pillar_concre.SetActive(false);
+    //
+    //        A_2F_base_rebar.SetActive(false);
+    //        A_2F_base_form.SetActive(false);
+    //        A_2F_base_concre.SetActive(false);
+    //
+    //        A_3F_base_rebar.SetActive(false);
+    //        A_3F_base_form.SetActive(false);
+    //        A_3F_base_concre.SetActive(false);
+    //
+    //        A_4F_base_rebar.SetActive(false);
+    //        A_4F_base_form.SetActive(false);
+    //        A_4F_base_concre.SetActive(false);
+    //
+    //        A_5F_base_rebar.SetActive(false);
+    //        A_5F_base_form.SetActive(false);
+    //        A_5F_base_concre.SetActive(false);
+    //
+    //        A_6F_base_rebar.SetActive(false);
+    //        A_6F_base_form.SetActive(false);
+    //        A_6F_base_concre.SetActive(false);
+    //
+    //        A_7F_base_rebar.SetActive(false);
+    //        A_7F_base_form.SetActive(false);
+    //        A_7F_base_concre.SetActive(false);
+    //
+    //        A_8F_base_rebar.SetActive(false);
+    //        A_8F_base_form.SetActive(false);
+    //        A_8F_base_concre.SetActive(false);
+    //
+    //        A_scaffold_1F.SetActive(false);
+    //        A_scaffold_2F.SetActive(false);
+    //        A_scaffold_3F.SetActive(false);
+    //        A_scaffold_4F.SetActive(false);
+    //        A_scaffold_5F.SetActive(false);
+    //        A_scaffold_6F.SetActive(false);
+    //        A_scaffold_7F.SetActive(false);
+    //        A_scaffold_8F.SetActive(false);
+    //        A_scaffold_9F.SetActive(false);
+    //
+    //        A_wall.SetActive(false);
+    //        A_window.SetActive(false);
+    //        A_decoration.SetActive(false);
+    //
+    //
+    //        A_Finish_UI.SetActive(false);
+    //        Debug.Log("스테이지 2의 오브젝트가 초기화됐습니다.");
+    //    }
+    //}
 
     private void ActiveConstructionStep(GameObject firstObj, GameObject secondObj = null,GameObject thirdObj = null, GameObject fourthObj = null)
     {
@@ -622,12 +738,8 @@ public class PlayStage : MonoBehaviour
                 currentStep++;
                 Debug.Log($"step{currentStep}");
             }
-            else
-            {
-                currentStep = 0;
-                Debug.Log($"step{currentStep}");
-            }
-            GameManager.Instance.userData.constructionNum[0] = 0;
+            currentStep = 0;
+            Debug.Log($"step{currentStep}");
             return;
         }
     }
@@ -661,13 +773,27 @@ public class PlayStage : MonoBehaviour
 
     private void ClaerCheck()
     {
-        if (!decoration_house.activeSelf||!!A_decoration.activeSelf) return;
-        if(decoration_house.activeSelf|| A_decoration.activeSelf)
+        if(GameManager.Instance.userData.stageNum[0] == 1)
         {
-            Finish_UI.SetActive(true);
-            GameManager.Instance.BGMaudioSource.Stop();
+            if (!decoration_house.activeSelf) return;
+            if (decoration_house.activeSelf)
+            {
+                Finish_UI.SetActive(true);
+                GameManager.Instance.BGMaudioSource.Stop();
+            }
+            return;
         }
-        return;
+        if(GameManager.Instance.userData.stageNum[0] == 2)
+        {
+            if (!A_decoration.activeSelf) return;
+            if (A_decoration.activeSelf)
+            {
+                Finish_UI.SetActive(true);
+                GameManager.Instance.BGMaudioSource.Stop();
+            }
+            return;
+        }
+
     }
 
     public void DestroyForm()

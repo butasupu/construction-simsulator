@@ -79,12 +79,12 @@ public class CameraControl : MonoBehaviour
         if(GameManager.Instance.userData.stageNum[0] == 1)
         {
             minZoom = 15f;
-            maxZoom = 20f;
+            maxZoom = 25f;
         }
         if (GameManager.Instance.userData.stageNum[0] == 2)
         {
-            minZoom = 25f;
-            maxZoom = 30f;
+            minZoom = 50f;
+            maxZoom = 80f;
         }
     }
 }

@@ -45,17 +45,17 @@ public class GameManager : MonoBehaviour
 
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
-    private void FixedUpdate()
-    {
-        if(Input.GetKey(KeyCode.O))
-        {
-            FadeIn();
-        }
-        if (Input.GetKey(KeyCode.P))
-        {
-            FadeOut();
-        }
-    }
+    //private void FixedUpdate()
+    //{
+    //    if(Input.GetKey(KeyCode.O))
+    //    {
+    //        FadeIn();
+    //    }
+    //    if (Input.GetKey(KeyCode.P))
+    //    {
+    //        FadeOut();
+    //    }
+    //}
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
@@ -84,6 +84,7 @@ public class GameManager : MonoBehaviour
         int sceneNum = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadSceneAsync(sceneNum);
     }
+
 
     private void GetBoolIsDone()
     {
@@ -217,13 +218,13 @@ public class GameManager : MonoBehaviour
     }
     public void ChangeBGM()
     {
-        if(userData.constructionNum[0] > 0)
+        if(userData.stageNum[0] == 0)
         {
             BGMaudioSource.clip = IntroBGM;
             BGMaudioSource.loop = true;
             BGMaudioSource.Play();
         }
-        if(userData.constructionNum[0] <= 0)
+        if(userData.stageNum[0] > 0)
         {
             BGMaudioSource.clip = StageBGM;
             BGMaudioSource.loop = true;
