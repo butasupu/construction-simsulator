@@ -19,6 +19,10 @@ public class CameraControl : MonoBehaviour
 
     //public float yminLimite = 0f;
     //public float ymaxLimite = 44f;
+    private void Start()
+    {
+        FixCamera();
+    }
 
     private void Update()
     {
@@ -68,5 +72,19 @@ public class CameraControl : MonoBehaviour
     private bool IsPointerOverUIElement()
     {
         return EventSystem.current.IsPointerOverGameObject();
+    }
+
+    private void FixCamera()
+    {
+        if(GameManager.Instance.userData.stageNum[0] == 1)
+        {
+            minZoom = 15f;
+            maxZoom = 20f;
+        }
+        if (GameManager.Instance.userData.stageNum[0] == 2)
+        {
+            minZoom = 25f;
+            maxZoom = 30f;
+        }
     }
 }
