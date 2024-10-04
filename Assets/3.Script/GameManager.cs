@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     public AudioClip IntroBGM;
     public AudioClip StageBGM;
     public Animator ani;
+    public Fadeboard fade;
     private void Awake()
     {
         if(Instance == null)
@@ -39,6 +40,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        //fade = FindObjectOfType<Fadeboard>();
         ani = GetComponent<Animator>();
         userData.stageNum = new int[1];
         userData.constructionNum = new int[1];
@@ -61,6 +63,7 @@ public class GameManager : MonoBehaviour
     {
         GetBoolIsDone();
         ChangeBGM();
+        //fade.FadeIn();
     }
 
     public void SetStageIndex(int index)

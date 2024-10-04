@@ -512,6 +512,7 @@ public class PlayStage : MonoBehaviour
             currentStep = 0;
             Debug.Log($"step{currentStep}");
             GameManager.Instance.userData.constructionNum[0] = 0;
+            currentStep = 0;
             return;
 
         }

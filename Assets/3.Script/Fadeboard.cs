@@ -1,43 +1,61 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Fadeboard : MonoBehaviour
 {
-    [SerializeField] private GameObject fadeInBoard, fadeOutBoard;
-
-    private void Awake()
+    [SerializeField] private Image panel;
+    [SerializeField] private GameObject fadeboard;
+    private float fadeTime = 1.5f;
+    private float AlphaColor;
+    
+    private void Start()
     {
-        SceneManager.activeSceneChanged += OnActiveSceneChanged;
+        
     }
 
-    private void OnDestroy()
+    public void FadeIn()
     {
-        SceneManager.activeSceneChanged -= OnActiveSceneChanged;
+        Debug.Log("fadein in");
+        fadeboard.SetActive(true);
+        StartCoroutine(FadeIn_Co());
+        Debug.Log("fadein out");
+    }
+    public void FadeOut(int sceneNum)
+    {
+        Debug.Log("fadeout in");
+        fadeboard.SetActive(true);
+        StartCoroutine(FadeOut_Co(sceneNum));
+        SceneManager.LoadScene(sceneNum);
+        Debug.Log("fadeout out");
+
     }
 
-    private void OnActiveSceneChanged(Scene oldScene, Scene newScene)
+    private IEnumerator FadeIn_Co()
     {
-        // 새로운 씬으로 변경되었을 때 페이드 인 실행
-        fadeInBoard.SetActive(true);
+        AlphaColor = 1;  // 완전 불투명에서 시작
+        while (AlphaColor > 0)
+        {
+            AlphaColor -= Time.deltaTime / fadeTime;  // fadeTime에 맞춰 AlphaColor 감소
+            panel.color = new Color(0, 0, 0, AlphaColor);  // 패널의 알파 값 적용
+            yield return null;  // 매 프레임마다 반복
+        }
+        panel.color = new Color(0, 0, 0, 0);  // 완전 투명 상태로 설정
+        fadeboard.SetActive(false);  // 페이드가 완료되면 비활성화
     }
 
-    public void TriggerFadeOutAndLoadScene()
+    private IEnumerator FadeOut_Co(int sceneNum)
     {
-        // 페이드 아웃 실행
-        fadeOutBoard.SetActive(true);
-
-        // 페이드 아웃이 완료된 후 씬을 로드
-        StartCoroutine(LoadNewSceneAfterFadeOut());
-    }
-
-    private IEnumerator LoadNewSceneAfterFadeOut()
-    {
-        // 페이드 아웃 애니메이션 완료까지 대기
-        yield return new WaitForSeconds(1f);
-
-        // 씬 전환 (새로운 씬 로드)
-        SceneManager.LoadScene("NextSceneName");
+        AlphaColor = 0;  // 완전 투명에서 시작
+        while (AlphaColor < 1.0f)
+        {
+            AlphaColor += Time.deltaTime / fadeTime;  // fadeTime에 맞춰 AlphaColor 증가
+            panel.color = new Color(0, 0, 0, AlphaColor);  // 패널의 알파 값 적용
+            yield return null;  // 매 프레임마다 반복
+        }
+        panel.color = new Color(0, 0, 0, 1);  // 완전 불투명 상태로 설정
+        SceneManager.LoadScene(sceneNum);  // 새로운 씬 로드
     }
 }
