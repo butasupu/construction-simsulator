@@ -6,8 +6,6 @@ using UnityEngine.EventSystems;
 public class CameraControl : MonoBehaviour
 {
 
-    //https://bloodstrawberry.tistory.com/604
-
     private float xRotateMove, yRotateMove;
     [SerializeField] private GameObject LookAtObj;
     public float rotateSpeed;
@@ -26,10 +24,10 @@ public class CameraControl : MonoBehaviour
 
     private void Update()
     {
-        MouseRotate();
+        MouseControl();
     }
 
-    private void MouseRotate()
+    private void MouseControl()
     {
         Vector3 lookPosition = LookAtObj.transform.position;
         if(!IsPointerOverUIElement())
